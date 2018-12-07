@@ -16,6 +16,7 @@
         <module>api-gateway</module>
         <module>hystrix-dashboard</module>
         <module>service-discovery</module>
+        <module>turbine</module>
     </modules>
 
     <dependencies>

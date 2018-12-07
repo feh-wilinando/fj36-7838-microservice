@@ -1,0 +1,16 @@
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+  application:
+    name: turbine
+
+eureka:
+  client:
+    register-with-eureka: false
+
+server:
+  port: 8070
