@@ -1,0 +1,15 @@
+package br.com.cdc.apigateway;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
+
+@EnableZuulProxy
+@EnableEurekaClient
+@SpringBootApplication
+public class ApiGateway {
+    public static void main(String[] args) {
+        SpringApplication.run(ApiGateway.class, args);
+    }
+}

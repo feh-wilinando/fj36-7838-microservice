@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  database:
+    image: mysql
+    environment:
+    - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+    ports:
+    - "3306:3306"
+    volumes:
+    - mysql:/var/lib/mysql
+  rabbit:
+    image: rabbitmq:management-alpine
+    ports:
+    - "15672:15672"
+    - "5672:5672"
+
+volumes:
+  mysql:
+    external: true
+

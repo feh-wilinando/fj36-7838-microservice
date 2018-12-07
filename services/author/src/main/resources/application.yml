@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/author?createDatabaseIfNotExist=true&useSSL=false
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+  application:
+    name: author
+
+server:
+  port: 0
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - health
+          - info
+          - hystrix.stream

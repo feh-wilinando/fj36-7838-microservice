@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=br.com.cdc.client.ClientConfiguration,\
+br.com.cdc.client.author.AuthorClient.Fallback,\
+br.com.cdc.client.buyer.BuyerClient.Fallback,\
+br.com.cdc.client.book.BookClient.Fallback
