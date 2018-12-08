@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 
@@ -16,7 +17,8 @@ public class Book {
     @NotNull
     private String title;
 
-    private Long authorId;
+    @OneToOne
+    private Author author;
 
     private BigDecimal price;
 
@@ -26,9 +28,9 @@ public class Book {
     @Deprecated
     private Book() { }
 
-    public Book(@NotNull String title, Long authorId, BigDecimal price) {
+    public Book(@NotNull String title, Author author, BigDecimal price) {
         this.title = title;
-        this.authorId = authorId;
+        this.author = author;
         this.price = price;
     }
 
@@ -40,8 +42,8 @@ public class Book {
         return title;
     }
 
-    public Long getAuthorId() {
-        return authorId;
+    public String  getAuthor() {
+        return author.getName();
     }
 
     public BigDecimal getPrice() {

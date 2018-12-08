@@ -1,5 +1,7 @@
 package br.com.cdc.book.feature.createBook;
 
+import br.com.cdc.book.shared.Author;
+import br.com.cdc.book.shared.AuthorRepository;
 import br.com.cdc.book.shared.Book;
 
 import javax.validation.constraints.DecimalMin;
@@ -43,7 +45,10 @@ public class CreateBookRequest {
         return price;
     }
 
-    public Book toDomain() {
-        return new Book(title, authorId, price);
+    public Book toDomain(AuthorRepository repository) {
+
+        Author author = repository.findById(authorId).orElseThrow(() -> new RuntimeException("Cannot load Author with id " + authorId));
+
+        return new Book(title, author , price);
     }
 }

@@ -7,6 +7,11 @@ spring:
       ddl-auto: update
   application:
     name: author
+  cloud:
+    stream:
+      bindings:
+        authors-created:
+          content-type: application/json
 
 server:
   port: 0

@@ -8,6 +8,15 @@ spring:
   application:
     name: book
 
+  cloud:
+    stream:
+      bindings:
+        authors-created:
+          group: author
+        authors-updated:
+          group: author
+
+
 server:
   port: 0
 
